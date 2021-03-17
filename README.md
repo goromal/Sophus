@@ -17,3 +17,21 @@ For access to Python library, add to .bashrc:
 ```bash
 export PYTHONPATH="$PYTHONPATH:/path/to/Sophus/py"
 ```
+
+## Usage
+
+In your CMakeLists.txt file, add:
+
+```cmake
+find_package(Sophus 1.0)
+
+...
+
+target_link_libraries(myprogram PRIVATE Sophus::Sophus)
+```
+
+For use in python:
+
+```python
+import sophus
+```
