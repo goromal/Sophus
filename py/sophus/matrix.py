@@ -1,6 +1,6 @@
 import sympy
 import sys
-
+import numpy as np
 assert sys.version_info >= (3, 5)
 
 
@@ -58,3 +58,11 @@ def unproj(v):
     assert m >= 1
     assert n == 1
     return v.col_join(sympy.Matrix.ones(1, 1))
+
+# get numpy array from sympy matrix
+def Matrix2Array(v):
+    return np.array(v).astype(np.float64)
+
+# get sympy matrix from numpy array
+def Array2Matrix(a):
+    return sympy.Matrix(a)
